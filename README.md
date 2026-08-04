@@ -1,49 +1,73 @@
-# Hello Cursor
+# Tarantool Expert — Cursor plugin
 
-A minimal starter [Cursor](https://cursor.com) / VS Code extension scaffold. Cursor extensions use the
-VS Code extension API, so this project can be developed, tested, and packaged with the standard VS Code
-extension toolchain and published to the marketplace.
+Cursor Marketplace plugin that turns Agent into a **Tarantool solution companion** for work in source repositories and local/dev environments.
 
-This scaffold exists to validate the development environment. Rename/replace it with your real plugin.
+It packages rules, skills, agents, commands, and **canonical Mermaid diagram templates** distilled from [tarantool/doc](https://github.com/tarantool/doc) / [Tarantool documentation](https://www.tarantool.io/en/doc/latest/).
 
-## Prerequisites
+> Knowledge-oriented: analyze, design, implement, review, migrate, and document Tarantool-powered apps.  
+> Not a live ops console for high-load production clusters (no Tarantool MCP connection in v0.1).
 
-- Node.js 20+ (this repo is developed on Node 22)
-- npm
+## Plugin
 
-## Setup
+| Name | Path | Description |
+| --- | --- | --- |
+| `tarantool-expert` | [`plugins/tarantool-expert`](plugins/tarantool-expert) | Universal Tarantool DLC toolkit for Cursor |
+
+Author: **muskmr** (`muskmr@gmail.com`) · License: **MIT**
+
+## What's included
+
+### Skills (16)
+
+Repo analysis, data model, schema design, engines (memtx/vinyl), Lua apps, config, replication, vshard, migrations, upgrades, tt CLI, connectors, testing, security, code review, Mermaid templates.
+
+### Rules
+
+- Tarantool core terminology & project conventions
+- Lua / `box.NULL` style (official guide aligned)
+- Mermaid canonical diagramming constraints
+
+### Agents
+
+- `tarantool-architect` — solution design
+- `tarantool-reviewer` — change review
+- `tarantool-migrator` — migrations & version upgrades
+
+### Commands
+
+`analyze-tarantool-repo`, `design-schema`, `design-topology`, `review-tarantool`, `diagram-tarantool`, `plan-migration`, `scaffold-tt-app`
+
+### Mermaid templates
+
+Standalone, master-replica, sync replication, master-master, vshard cluster, bucket states, request flow, persistence, schema ER, engine choice, fiber model, migration sequence — under `skills/tarantool-mermaid-diagrams/templates/`.
+
+## Install / publish
+
+This repo follows the [Cursor plugin template](https://github.com/cursor/plugin-template) multi-plugin layout:
+
+- Root marketplace manifest: [`.cursor-plugin/marketplace.json`](.cursor-plugin/marketplace.json)
+- Plugin manifest: [`plugins/tarantool-expert/.cursor-plugin/plugin.json`](plugins/tarantool-expert/.cursor-plugin/plugin.json)
+
+Validate locally:
 
 ```bash
-npm install
+node scripts/validate-template.mjs
 ```
 
-## Develop
+Submit the public GitHub repository at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish).
 
-- `npm run compile` — type-check and build to `dist/`
-- `npm run watch` — rebuild on change
-- `npm run lint` — run ESLint over `src/`
-- Press `F5` in Cursor/VS Code to launch an Extension Development Host and try the
-  **Hello Cursor: Say Hello** command (from the Command Palette).
+## Development lifecycle coverage
 
-## Test
+| DLC stage | Use |
+| --- | --- |
+| Discover / analyze | `/analyze-tarantool-repo`, `tarantool-repo-analysis` |
+| Design | `/design-schema`, `/design-topology`, architect agent, Mermaid skill |
+| Implement | Lua apps, config, tt CLI, connectors skills |
+| Test | `tarantool-testing` |
+| Review | `/review-tarantool`, reviewer agent |
+| Migrate / upgrade | `/plan-migration`, migrator agent |
+| Document | `/diagram-tarantool` + templates |
 
-Integration tests run against a real editor instance downloaded by `@vscode/test-electron`:
+## Attribution
 
-```bash
-npm test
-```
-
-In a headless environment (no display), run under a virtual framebuffer:
-
-```bash
-xvfb-run -a npm test
-```
-
-## Package (marketplace artifact)
-
-```bash
-npm run package
-```
-
-This produces a `.vsix` file — the artifact you upload to the marketplace (or install locally via
-"Extensions: Install from VSIX..."). Set a real `publisher` in `package.json` before publishing.
+Concepts and terminology are derived from the official Tarantool documentation repository ([tarantool/doc](https://github.com/tarantool/doc)). This plugin is an independent community project and is not affiliated with Tarantool LLC.

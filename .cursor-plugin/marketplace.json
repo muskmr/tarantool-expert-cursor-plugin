@@ -1,0 +1,19 @@
+{
+  "name": "tarantool-expert",
+  "owner": {
+    "name": "muskmr",
+    "email": "muskmr@gmail.com"
+  },
+  "metadata": {
+    "description": "Cursor marketplace plugins for Tarantool-powered solution development",
+    "version": "0.1.0",
+    "pluginRoot": "plugins"
+  },
+  "plugins": [
+    {
+      "name": "tarantool-expert",
+      "source": "tarantool-expert",
+      "description": "Universal Tarantool expert for analyzing, designing, upgrading, and documenting Tarantool projects in Cursor"
+    }
+  ]
+}

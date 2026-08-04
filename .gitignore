@@ -1,5 +1,11 @@
 node_modules/
+.DS_Store
+*.log
+.cursor/*
+!.cursor/.gitignore
 dist/
 out/
-.vscode-test/
 *.vsix
+.vscode-test/
+tmp/
+/tmp/

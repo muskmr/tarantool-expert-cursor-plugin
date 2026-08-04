@@ -1,28 +1,21 @@
 # AGENTS.md
 
-## Cursor Cloud specific instructions
+## Repository
 
-This repository is a **Cursor/VS Code extension** (it uses the standard VS Code extension API, so Cursor
-marketplace plugins are built, tested, and packaged with the normal VS Code extension toolchain).
+This repository is a **Cursor Marketplace plugin** (not a VS Code extension). Layout follows https://github.com/cursor/plugin-template.
 
-Environment: Node 22 + `npm`. Dependencies install with `npm install` (already handled by the startup
-update script when `package.json` is present).
+- Marketplace manifest: `.cursor-plugin/marketplace.json`
+- Plugin: `plugins/tarantool-expert/`
+- Validate: `node scripts/validate-template.mjs`
 
-Standard commands (see `package.json` scripts and `README.md`):
+## Content guidelines
 
-- Build: `npm run compile` (TypeScript → `dist/`); `npm run watch` for incremental builds.
-- Lint: `npm run lint` (ESLint over `src/`).
-- Package a marketplace artifact: `npm run package` → produces `hello-cursor-<version>.vsix`.
+- Prefer official Tarantool terminology from https://github.com/tarantool/doc
+- Keep guidance oriented to **repositories and local/dev** workflows
+- Do not add live high-load cluster MCP tooling unless explicitly requested
+- Mermaid diagrams must use templates under `skills/tarantool-mermaid-diagrams/templates/`
 
-Non-obvious caveats for this cloud VM:
+## Author
 
-- Tests use `@vscode/test-electron`, which downloads and launches a real editor build. There is no display
-  in the cloud VM, so run tests under a virtual framebuffer: `xvfb-run -a npm test`. A plain `npm test`
-  will fail to launch the editor.
-- During headless test runs the editor prints `dbus`/`gpu`/`Settings Sync` errors to stderr. These are
-  harmless in this environment; rely on the mocha summary (e.g. `2 passing`) for pass/fail.
-- No `code`/`cursor` CLI is installed, so the F5 "Extension Development Host" flow is not available
-  headlessly. Validate behavior via the `@vscode/test-electron` suite (`xvfb-run -a npm test`) or by
-  packaging the `.vsix` instead.
-- Before publishing to the marketplace, set a real `publisher` in `package.json` (the scaffold uses the
-  placeholder `your-publisher`).
+- muskmr \<muskmr@gmail.com\>
+- License: MIT
