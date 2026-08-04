@@ -1,6 +1,8 @@
-# Tarantool Expert
+# Tarantool IS Expert
 
-Universal Cursor plugin for Tarantool-powered solutions — for solution developers, app developers, and DLC work in repositories and local/dev setups.
+Community Cursor plugin for Tarantool-powered solutions — for solution developers, app developers, and DLC work in repositories and local/dev setups.
+
+> Independent community project. Not affiliated with Tarantool LLC / VK. See [NOTICE](NOTICE).
 
 ## Features
 
@@ -11,9 +13,16 @@ Universal Cursor plugin for Tarantool-powered solutions — for solution develop
 
 ## Scope
 
-In scope: reading/writing project code and configs, designing topologies, planning migrations, documenting with Mermaid.
+**In scope:** reading/writing project code and configs, designing topologies, planning migrations, documenting with Mermaid.
 
-Out of scope (v0.1): live connection to production/high-load clusters via MCP.
+**Out of scope:** live MCP connection to Tarantool; production/high-load cluster operations; automatic hooks.
+
+## Security posture
+
+- Knowledge-only pack (markdown skills/rules/commands/agents)
+- No plugin runtime dependencies, no hooks, no MCP servers
+- Guidance tells Agent to keep secrets out of git and avoid unsafe install patterns
+- Report issues via [SECURITY.md](../../SECURITY.md)
 
 ## Quick commands
 

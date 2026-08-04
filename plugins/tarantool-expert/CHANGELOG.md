@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+- Marketplace security/compliance tune: `SECURITY.md`, safer `.gitignore`, `safe-guidance` rule
+- Compress marketplace logo; clarify community/non-affiliation in plugin README + description
+- Add `docs/marketplace-checklist.md` for submission hygiene
+
 ## 0.1.1
 
 - Marketplace logo: Tarantool IS Expert badge (`assets/logo.png`)

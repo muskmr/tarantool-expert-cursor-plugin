@@ -1,0 +1,15 @@
+---
+description: Safety boundaries for Tarantool guidance — no prod ops, no secrets in git, prefer local/dev
+alwaysApply: false
+---
+
+# Safe guidance boundaries
+
+When applying Tarantool Expert skills in a user project:
+
+1. Prefer repository analysis and local/`tt` developer workflows over production cluster operations.
+2. Never invent or embed real-looking passwords, tokens, or private keys in samples — use placeholders (`CHANGE_ME`, `${TARANTOOL_PASSWORD}`).
+3. Do not recommend piping remote scripts to a shell (`curl | sh`) to install Tarantool tooling.
+4. Treat migration/upgrade content as **plans and checklists**; ask before applying destructive DDL or data transforms.
+5. Flag committed secrets or world-open guest access in deploy configs as review blockers.
+6. Keep Mermaid diagrams free of `click` handlers and external script URLs.
