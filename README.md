@@ -13,7 +13,7 @@ It packages rules, skills, agents, commands, and **canonical Mermaid diagram tem
 | --- | --- | --- |
 | `tarantool-expert` | [`plugins/tarantool-expert`](plugins/tarantool-expert) | Universal Tarantool DLC toolkit for Cursor |
 
-Author: **muskmr** (`muskmr@gmail.com`) · License: **MIT**
+Author: **muskmr** (`muskmr@gmail.com`) · License: **MIT** · See [NOTICE](NOTICE) for trademark/docs attribution.
 
 ## What's included
 
