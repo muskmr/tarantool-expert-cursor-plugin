@@ -14,6 +14,8 @@ This repository is a **Cursor Marketplace plugin** (not a VS Code extension). La
 - Keep guidance oriented to **repositories and local/dev** workflows
 - Do not add live high-load cluster MCP tooling unless explicitly requested
 - Mermaid diagrams must use templates under `skills/tarantool-mermaid-diagrams/templates/`
+- Never commit secrets; keep samples placeholder-only
+- Before marketplace updates: `SECURITY.md` maintainer checklist + `npm run validate`
 
 ## Author
 
