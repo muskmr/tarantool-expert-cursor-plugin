@@ -1,0 +1,35 @@
+NOTICE
+======
+
+Tarantool IS Expert (this Cursor plugin) is an independent community project.
+It is not affiliated with, endorsed by, or sponsored by Tarantool LLC or
+VK Company Limited unless separately stated.
+
+Third-party trademarks
+----------------------
+
+"Tarantool" and related marks are trademarks of their respective owners.
+Use of those names in this plugin is for identification of the Tarantool
+platform only.
+
+Documentation used as a knowledge source
+----------------------------------------
+
+Plugin skills, rules, and diagram templates paraphrase concepts from the
+official Tarantool documentation set:
+
+  https://github.com/tarantool/doc
+  https://www.tarantool.io/en/doc/latest/
+
+The tarantool/doc repository is licensed under the BSD 2-Clause License
+(see that repository's LICENSE and AUTHORS). This plugin does **not**
+redistribute Tarantool server source code, documentation source trees,
+or binary builds of Tarantool.
+
+No Tarantool source code is included
+------------------------------------
+
+This repository contains original plugin assets (Cursor rules, skills,
+agents, commands, Mermaid templates, and logos) under the MIT License
+(see LICENSE). A BSD NOTICE reproduction requirement for Tarantool
+source/binaries does not apply because those materials are not shipped here.

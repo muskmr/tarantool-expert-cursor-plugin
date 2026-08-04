@@ -1,0 +1,26 @@
+---
+description: Core Tarantool terminology and project conventions grounded in official docs
+globs: "**/*.{lua,yml,yaml,json,rockspec,md}"
+alwaysApply: false
+---
+
+# Tarantool core conventions
+
+Use official Tarantool terminology from https://www.tarantool.io/en/doc/latest/ and https://github.com/tarantool/doc:
+
+- **space** — primary data container (like a table)
+- **tuple** — record/row inside a space
+- **index** — TREE (default), HASH / RTREE / BITSET (memtx); primary index must be unique
+- **engine** — `memtx` (default in-memory) or `vinyl` (on-disk)
+- **instance / replica set / shard / router / bucket** — topology terms; do not invent synonyms
+- **iproto** — binary protocol between instances and clients
+- **WAL + snapshot** — persistence model
+- **fiber** — cooperative multitasking unit (yield-aware)
+
+When analyzing or changing a Tarantool project:
+
+1. Prefer declarative Tarantool 3.x YAML config + roles when the repo already uses them; otherwise keep the existing `box.cfg` / Cartridge style consistent.
+2. Treat schema changes as migrations (`tt` migrations / `space.upgrade`), not ad-hoc production edits.
+3. Distinguish **application Lua** (roles, stored procedures) from **client connector** code.
+4. Never assume a live high-load cluster is available — reason from repository artifacts, configs, and local/dev instances.
+5. Cite or mirror canonical concepts when unsure; do not invent APIs.

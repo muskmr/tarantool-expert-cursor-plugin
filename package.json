@@ -1,45 +1,14 @@
 {
-  "name": "hello-cursor",
-  "displayName": "Hello Cursor",
-  "description": "Starter Cursor/VS Code extension scaffold used to validate the development environment.",
-  "version": "0.0.1",
-  "publisher": "your-publisher",
-  "license": "AGPL-3.0-only",
-  "engines": {
-    "vscode": "^1.85.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "main": "./dist/extension.js",
-  "activationEvents": [],
-  "contributes": {
-    "commands": [
-      {
-        "command": "hello-cursor.helloWorld",
-        "title": "Hello Cursor: Say Hello"
-      }
-    ]
-  },
+  "name": "tarantool-expert-cursor-plugin",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Cursor marketplace plugin pack for Tarantool solution development",
+  "license": "MIT",
+  "author": "muskmr <muskmr@gmail.com>",
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "lint": "eslint src",
-    "pretest": "npm run compile && npm run lint",
-    "test": "vscode-test",
-    "package": "vsce package --no-dependencies --allow-missing-repository"
+    "validate": "node scripts/validate-template.mjs"
   },
-  "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.0",
-    "@types/vscode": "^1.85.0",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1",
-    "@vscode/vsce": "^2.31.1",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.5"
+  "engines": {
+    "node": ">=18"
   }
 }

@@ -1,0 +1,24 @@
+---
+description: Tarantool Lua style — naming, modules, box.NULL, error returns (official style guide)
+globs: "**/*.lua"
+alwaysApply: false
+---
+
+# Tarantool Lua style
+
+Follow the Tarantool Lua style guide (doc/contributing/lua_style_guide.rst):
+
+- 4 spaces; snake_case for functions/vars; CamelCase for "classes"
+- Prefer locals; expose module API via returned table; avoid globals (`_G` only with prefix)
+- Use `tostring` / `tonumber`, not concat/add for conversions
+- Prefer `string.format` over multi-concat
+- Check nil explicitly: `if x == nil` / `if x ~= nil` — do **not** use truthiness alone (`if x then`) because of `box.NULL`
+- Error idiom: `return nil, err` (or `status, err`); check first return for `nil`
+- Prefer `function object.method(self)` over `function object:method()`
+- Use `tap` / project test harness for tests; keep luacheck-friendly code
+
+Cooperative multitasking:
+
+- Long loops and blocking I/O must yield (fiber-aware APIs)
+- Do not call blocking syscalls that stall the event loop
+- Transactions: prefer short atomic units; use MVCC only when the project already enables it and memtx is in use

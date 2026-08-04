@@ -1,0 +1,18 @@
+---
+description: When drawing Tarantool architecture diagrams, use plugin Mermaid templates and canonical topology terms
+alwaysApply: false
+---
+
+# Tarantool Mermaid rules
+
+When the user asks for architecture / topology / data-flow / migration diagrams for Tarantool:
+
+1. Load the `tarantool-mermaid-diagrams` skill and start from its templates.
+2. Use only canonical node labels: `Instance`, `Master`, `Replica`, `ReplicaSet`, `Router`, `Storage`, `Bucket`, `Space`, `Index`, `WAL`, `Snapshot`, `Client`, `iproto`.
+3. Prefer these diagram types:
+   - `flowchart` / `graph` for topology and request routing
+   - `sequenceDiagram` for request/migration/failover flows
+   - `erDiagram` only for space/field relationships (not physical topology)
+   - `stateDiagram-v2` for bucket migration states (`ACTIVE`, `SENDING`, `RECEIVING`, `SENT`, `GARBAGE`, `PINNED`)
+4. Obey Cursor Mermaid constraints: no spaces in node IDs; quote labels with special chars; no `style`/`classDef` theme overrides; no `click` handlers.
+5. Do not invent cluster roles (e.g. "proxy shard") absent from Tarantool docs.

@@ -1,0 +1,12 @@
+NOTICE
+======
+
+Tarantool IS Expert is an independent community Cursor plugin and is not
+affiliated with Tarantool LLC / VK Company Limited unless separately stated.
+
+"Tarantool" is a trademark of its respective owners and is used here only
+to identify the Tarantool platform.
+
+Skills and guidance in this plugin are paraphrased from public Tarantool
+documentation (https://github.com/tarantool/doc, BSD 2-Clause). This plugin
+does not include or redistribute Tarantool source code or binaries.
