@@ -1,6 +1,6 @@
 # Tarantool Expert — Cursor plugin
 
-Cursor Marketplace plugin that turns Agent into a **Tarantool solution companion** for work in source repositories and local/dev environments.
+Cursor Marketplace plugin (**Tarantool IS Expert**) that turns Agent into a Tarantool solution companion for work in source repositories and local/dev environments.
 
 It packages rules, skills, agents, commands, and **canonical Mermaid diagram templates** distilled from [tarantool/doc](https://github.com/tarantool/doc) / [Tarantool documentation](https://www.tarantool.io/en/doc/latest/).
 

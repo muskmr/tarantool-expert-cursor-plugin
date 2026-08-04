@@ -1,7 +1,7 @@
 {
   "name": "tarantool-expert",
-  "displayName": "Tarantool Expert",
-  "version": "0.1.0",
+  "displayName": "Tarantool IS Expert",
+  "version": "0.1.1",
   "description": "Knowledge pack for Tarantool solution developers: schema design, Lua apps, replication/vshard topology, migrations, upgrades, repo analysis, and canonical Mermaid diagram templates. Works with source repos and local/dev setups — not a live ops console for high-load clusters.",
   "author": {
     "name": "muskmr",
@@ -23,5 +23,5 @@
     "mermaid",
     "migrations"
   ],
-  "logo": "assets/logo.svg"
+  "logo": "assets/logo.png"
 }
