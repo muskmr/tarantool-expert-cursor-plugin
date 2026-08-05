@@ -68,7 +68,20 @@ Run these in **Agent** chat (not just Tab):
 - Skills from `tarantool-*` are listed
 - Rules can be toggled (none should force `Always` unless you set them)
 - Agents `tarantool-architect` / `reviewer` / `migrator` are available if your Cursor build surfaces plugin agents
-- Logo/name show as **Tarantool IS Expert** when installed from marketplace
+- Logo/name show as **Tarantool IS Expert** (hex badge) for both marketplace and local install
+
+### Emblem / logo for local install
+
+Yes — local plugins use the same `logo` field as marketplace ones:
+
+```json
+// plugins/tarantool-expert/.cursor-plugin/plugin.json
+"logo": "assets/logo.png"
+```
+
+`./scripts/install-local.sh` copies `assets/logo.png` into `~/.cursor/plugins/local/tarantool-expert/assets/`. After **Reload Window**, Customize should show the emblem next to the plugin name.
+
+To swap the badge: replace `plugins/tarantool-expert/assets/logo.png` (square PNG/SVG), keep the `logo` path in `plugin.json`, re-run `./scripts/install-local.sh`, Reload Window.
 
 ## 5) Tear down local install
 
