@@ -3,17 +3,17 @@
 This plugin is **not** a VS Code extension (no F5 / Extension Host).  
 Cursor loads it as a marketplace-style plugin from disk or from the Marketplace install.
 
-## 1) Validate package (CI-ish)
+## 1) Validate package (CI-ish / cloud)
 
 From the repo root:
 
 ```bash
-node scripts/validate-template.mjs
-# or
-npm run validate
+npm run validate      # manifests + frontmatter
+npm run smoke:local   # also copies into ~/.cursor/plugins/local and asserts layout
 ```
 
-This checks manifests + frontmatter. It does **not** prove Agent behavior.
+What cloud agents **can** test: package validity + local install filesystem layout (including logo).  
+What cloud agents **cannot** test: Cursor Desktop Customize UI / Agent chat loading (no desktop Cursor host in the cloud VM).
 
 ## 2) Install into Cursor local plugins (recommended smoke test)
 
@@ -68,7 +68,20 @@ Run these in **Agent** chat (not just Tab):
 - Skills from `tarantool-*` are listed
 - Rules can be toggled (none should force `Always` unless you set them)
 - Agents `tarantool-architect` / `reviewer` / `migrator` are available if your Cursor build surfaces plugin agents
-- Logo/name show as **Tarantool IS Expert** when installed from marketplace
+- Logo/name show as **Tarantool IS Expert** (hex badge) for both marketplace and local install
+
+### Emblem / logo for local install
+
+Yes — local plugins use the same `logo` field as marketplace ones:
+
+```json
+// plugins/tarantool-expert/.cursor-plugin/plugin.json
+"logo": "assets/logo.png"
+```
+
+`./scripts/install-local.sh` copies `assets/logo.png` into `~/.cursor/plugins/local/tarantool-expert/assets/`. After **Reload Window**, Customize should show the emblem next to the plugin name.
+
+To swap the badge: replace `plugins/tarantool-expert/assets/logo.png` (square PNG/SVG), keep the `logo` path in `plugin.json`, re-run `./scripts/install-local.sh`, Reload Window.
 
 ## 5) Tear down local install
 

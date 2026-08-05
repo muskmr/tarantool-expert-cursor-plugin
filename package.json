@@ -7,7 +7,8 @@
   "author": "muskmr <muskmr@gmail.com>",
   "scripts": {
     "validate": "node scripts/validate-template.mjs",
-    "install:local": "bash scripts/install-local.sh"
+    "install:local": "bash scripts/install-local.sh",
+    "smoke:local": "bash scripts/smoke-local-install.sh"
   },
   "engines": {
     "node": ">=18"
