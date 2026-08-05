@@ -3,17 +3,17 @@
 This plugin is **not** a VS Code extension (no F5 / Extension Host).  
 Cursor loads it as a marketplace-style plugin from disk or from the Marketplace install.
 
-## 1) Validate package (CI-ish)
+## 1) Validate package (CI-ish / cloud)
 
 From the repo root:
 
 ```bash
-node scripts/validate-template.mjs
-# or
-npm run validate
+npm run validate      # manifests + frontmatter
+npm run smoke:local   # also copies into ~/.cursor/plugins/local and asserts layout
 ```
 
-This checks manifests + frontmatter. It does **not** prove Agent behavior.
+What cloud agents **can** test: package validity + local install filesystem layout (including logo).  
+What cloud agents **cannot** test: Cursor Desktop Customize UI / Agent chat loading (no desktop Cursor host in the cloud VM).
 
 ## 2) Install into Cursor local plugins (recommended smoke test)
 
