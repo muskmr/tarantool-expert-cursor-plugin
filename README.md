@@ -17,6 +17,18 @@ Author: **muskmr** (`muskmr@gmail.com`) · License: **MIT** · See [NOTICE](NOTI
 
 Before marketplace publish, follow [docs/marketplace-checklist.md](docs/marketplace-checklist.md).
 
+## Try it locally in Cursor
+
+This is a Cursor plugin (skills/rules/commands), not a VS Code extension — there is no F5 host.
+
+```bash
+./scripts/install-local.sh   # copies plugin → ~/.cursor/plugins/local/tarantool-expert
+```
+
+Then in Cursor: **Developer: Reload Window** → open **Customize** → try `/analyze-tarantool-repo` or `/diagram-tarantool` in Agent chat.
+
+Full smoke-test plan: [docs/local-testing.md](docs/local-testing.md).
+
 ## What's included
 
 ### Skills (16)
